@@ -1,10 +1,13 @@
-import React from 'react'
-import {useParams} from 'react-router-dom'
+import React, {Fragment} from 'react'
+import {useParams, Link} from 'react-router-dom'
 
 function DeckDetails() {
     const {deckId} = useParams()
     return (
-        <h1>Deck Details</h1>
+        <Fragment>
+            <Link to="/" type="btn" className="btn btn-primary">Go Home</Link>
+            <h1>Deck Details</h1>
+        </Fragment>
     )
 }
 

@@ -1,11 +1,14 @@
-import React from 'react'
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
+import React, {Fragment} from 'react'
+import { useParams, Link } from 'react-router-dom'
 
 function Study() {
     const {deckId} = useParams()
     
   return (
-    <h1>Study</h1>
+    <Fragment>
+      <Link to="/" type="btn" className="btn btn-primary">Go Home</Link>
+      <h1>Study</h1>
+    </Fragment>
   )
 }
 
