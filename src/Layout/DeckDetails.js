@@ -6,7 +6,7 @@ function DeckDetails() {
     return (
         <Fragment>
             <Link to="/" type="btn" className="btn btn-primary">Go Home</Link>
-            <h1>Deck Details</h1>
+            <h1>Deck View</h1>
         </Fragment>
     )
 }
