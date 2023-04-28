@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {Fragment} from 'react'
+import { Link } from 'react-router-dom'
 
 function CreateDeck() {
   return (
-    <h1>Create Deck</h1>
+    <Fragment>
+      <Link to="/" type="btn" className="btn btn-primary">Go Home</Link>
+      <h1>Create Deck</h1>
+    </Fragment>
   )
 }
 

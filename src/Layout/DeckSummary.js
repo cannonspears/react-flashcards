@@ -3,8 +3,7 @@ import { Route, Switch, Link, useHistory, useParams } from "react-router-dom";
 
 function DeckSummary({ deck: {name, cards, description, id} }) {
   return (
-    <div className="col">
-      <div className="card mb-1">
+      <div className="card mb-2">
           <div className="card-body">
               <h5 className="card-title">{name}</h5>
               <h6>{cards.length} cards</h6>
@@ -14,7 +13,6 @@ function DeckSummary({ deck: {name, cards, description, id} }) {
               <Link type="button" class="btn btn-danger m-1">DELETE</Link>
           </div>
       </div>
-    </div>
   );
 }
 
