@@ -1,9 +1,9 @@
 import React, {Fragment, useEffect, useState} from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { readDeck } from '../utils/api';
-import CardList from './CardList';
+import StudyCards from './StudyCards';
 
-function Study() {
+function StudyPage() {
   const { deckId } = useParams();
   const [deck, setDeck] = useState({});
   const [notEnoughCards, setNotEnoughCards] = useState(false);
@@ -37,7 +37,7 @@ function Study() {
         </Fragment>
       ) : (
         <Fragment>
-          <CardList deck={deck} />
+          <StudyCards deck={deck} />
         </Fragment>
       )}
     </Fragment>
@@ -45,4 +45,4 @@ function Study() {
 }
 
 
-export default Study
+export default StudyPage

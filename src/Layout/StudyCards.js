@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function CardList({deck}) {
+function StudyCards({deck}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isCardShown, setIsCardShown] = useState(true);
 
@@ -47,4 +47,4 @@ function CardList({deck}) {
   );
 }
 
-export default CardList
+export default StudyCards

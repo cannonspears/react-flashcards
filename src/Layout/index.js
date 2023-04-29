@@ -1,10 +1,10 @@
-import React, { useState, useEffect, Fragment } from "react";
-import { Route, Switch, Link, useHistory, useParams } from "react-router-dom";
+import React, { Fragment } from "react";
+import { Route, Switch } from "react-router-dom";
 
 import Header from "./Header";
 import DeckList from "./DeckList";
 import CreateDeck from "./CreateDeck"
-import Study from "./Study";
+import StudyPage from "./StudyPage";
 import DeckDetails from "./DeckDetails"
 import NotFound from "./NotFound";
 
@@ -23,7 +23,7 @@ function Layout() {
             <CreateDeck />
           </Route>
           <Route path="/decks/:deckId/study">
-            <Study />
+            <StudyPage />
           </Route>
           <Route path="/decks/:deckId">
             <DeckDetails />

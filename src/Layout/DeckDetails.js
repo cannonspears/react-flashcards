@@ -29,6 +29,10 @@ function DeckDetails() {
             <Link to="#" type="button" class="btn btn-primary m-1">ADD CARDS</Link>
             <Link type="button" class="btn btn-danger m-1">DELETE</Link>
 
+            {deck?.cards?.map(card => {
+                return <p>test</p>
+            })}
+
         </Fragment>
     )
 }
