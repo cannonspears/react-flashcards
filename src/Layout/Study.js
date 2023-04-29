@@ -3,9 +3,6 @@ import { useParams, Link } from 'react-router-dom'
 import { readDeck } from '../utils/api';
 import CardList from './CardList';
 
-
-
-
 function Study() {
   const { deckId } = useParams();
   const [deck, setDeck] = useState({});
@@ -22,7 +19,7 @@ function Study() {
 
   return (
     <Fragment>
-       <nav aria-label="breadcrumb">
+    <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><Link to="/">Home</Link></li>
         <li class="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deck.name}</Link></li>

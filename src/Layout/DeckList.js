@@ -4,8 +4,6 @@ import DeckSummary from "./DeckSummary";
 
 import { listDecks } from "../utils/api/index";
 
-
-
 function DeckList() {
   const [decks, setDecks] = useState([]);
 

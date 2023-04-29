@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Link, useHistory, useParams } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function DeckSummary({ deck: {name, cards, description, id} }) {
   return (
