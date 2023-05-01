@@ -1,5 +1,6 @@
 import React, {useState, Fragment} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { createDeck } from '../utils/api'
 
 function CreateDeck() {
   const initialFormData = {
@@ -8,6 +9,8 @@ function CreateDeck() {
   }
 
   const [formData, setFormData] = useState({...initialFormData})
+  const history = useHistory()
+
 
   const handleChange = (event) => {
     setFormData({
@@ -18,7 +21,8 @@ function CreateDeck() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log("Submitted");
+    createDeck(formData)
+    .then(({id}) => history.push(`/decks/${id}`))
   }
 
   return (
@@ -56,7 +60,7 @@ function CreateDeck() {
             />
         </div>
 
-        <a type="button" className="btn btn-secondary mr-2" href="/" role="button">Cancel</a>
+        <Link to="/" type="button" className="btn btn-secondary mr-2" role="button">Cancel</Link>
         <button type="submit" class="btn btn-primary">Submit</button>
         
       </form>
