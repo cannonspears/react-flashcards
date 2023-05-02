@@ -4,6 +4,8 @@ import DeckSummary from "./DeckSummary";
 
 import { listDecks } from "../utils/api/index";
 
+import { BsPlusSquare } from "react-icons/bs";
+
 function DeckList() {
   const [decks, setDecks] = useState([]);
 
@@ -13,7 +15,7 @@ function DeckList() {
   
   return (
     <div>
-      <Link to="/decks/new" type="button" className="btn btn-secondary mb-3">CREATE DECK</Link>
+      <Link to="/decks/new" type="button" className="btn btn-secondary mb-3"><BsPlusSquare /> Create Deck</Link>
         {decks.map((deck) => {
           return <DeckSummary key={deck.id} deck={deck} />;
         })}

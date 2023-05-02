@@ -3,6 +3,8 @@ import { useParams, Link } from "react-router-dom"
 
 import { readDeck, createCard } from "../utils/api"
 
+import { BsHouseFill } from "react-icons/bs";
+
 function CreateCard(){
     const initialFormData = {
         front: "",
@@ -33,7 +35,7 @@ function CreateCard(){
         <div>
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                    <li className="breadcrumb-item"><Link to="/"><BsHouseFill /> Home</Link></li>
                     <li className="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deck.name}</Link></li>
                     <li className="breadcrumb-item active" aria-current="page">Add Card</li>
                 </ol>

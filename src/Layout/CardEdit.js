@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 import { readDeck, readCard, updateCard } from "../utils/api";
 
+import { BsHouseFill } from "react-icons/bs";
+
 function CardEdit() {
     const initialFormData = {
         front: "",
@@ -41,7 +43,7 @@ function CardEdit() {
         <div>
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
-                <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                <li className="breadcrumb-item"><Link to="/"><BsHouseFill /> Home</Link></li>
                 <li className="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deck.name}</Link></li>
                 <li className="breadcrumb-item active" aria-current="page">Edit Card {cardId}</li>
                 </ol>

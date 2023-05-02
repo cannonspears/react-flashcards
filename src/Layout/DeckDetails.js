@@ -4,7 +4,7 @@ import CardDetails from "./CardDetails"
 
 import { readDeck, deleteDeck } from '../utils/api';
 
-import { BsTrash } from "react-icons/bs";
+import { BsHouseFill, BsPencilFill, BsFillBookmarksFill, BsPlusSquare, BsTrash } from "react-icons/bs";
 
 function DeckDetails() {
     const { deckId } = useParams()
@@ -27,7 +27,7 @@ function DeckDetails() {
         <div>
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                    <li className="breadcrumb-item"><Link to="/"><BsHouseFill /> Home</Link></li>
                     <li className="breadcrumb-item active" aria-current="page">{deck.name}</li>
                 </ol>
             </nav>
@@ -35,9 +35,9 @@ function DeckDetails() {
                 <div className="mb-2">
                     <h2>{deck.name}</h2>
                     <p>{deck.description}</p>
-                    <Link to={`/decks/${deckId}/edit`} type="button" className="btn btn-secondary mr-1">EDIT</Link>
-                    <Link to={`/decks/${deckId}/study`} type="button" className="btn btn-primary m-1">STUDY</Link>
-                    <Link to={`/decks/${deckId}/cards/new`} type="button" className="btn btn-primary m-1">ADD CARDS</Link>
+                    <Link to={`/decks/${deckId}/edit`} type="button" className="btn btn-secondary mr-1"><BsPencilFill /> Edit</Link>
+                    <Link to={`/decks/${deckId}/study`} type="button" className="btn btn-primary m-1"><BsFillBookmarksFill /> Study</Link>
+                    <Link to={`/decks/${deckId}/cards/new`} type="button" className="btn btn-primary m-1"><BsPlusSquare /> Add Cards</Link>
                     <button onClick={handleDelete} type="button" className="btn btn-danger m-1"><BsTrash /></button>
                 </div>
                 <h2>Cards</h2>

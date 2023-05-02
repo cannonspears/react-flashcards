@@ -4,6 +4,8 @@ import StudyCards from './StudyCards';
 
 import { readDeck } from '../utils/api';
 
+import { BsHouseFill, BsPlusSquare } from "react-icons/bs";
+
 function StudyPage() {
   const { deckId } = useParams();
   const [deck, setDeck] = useState({});
@@ -22,7 +24,7 @@ function StudyPage() {
     <div>
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
-          <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+          <li className="breadcrumb-item"><Link to="/"><BsHouseFill /> Home</Link></li>
           <li className="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deck.name}</Link></li>
           <li className="breadcrumb-item active" aria-current="page">Study</li>
         </ol>
@@ -33,7 +35,7 @@ function StudyPage() {
             <h2>Not enough cards.</h2>
             <p>You need at least 3 cards to study. There are {deck?.cards?.length} cards in this deck.</p>
             <Link to={`/decks/${deckId}/cards/new`}>
-              <button type="button" className="btn btn-primary">Add Cards</button>
+              <button type="button" className="btn btn-primary"><BsPlusSquare /> Add Cards</button>
             </Link>
           </div>
         ) : (

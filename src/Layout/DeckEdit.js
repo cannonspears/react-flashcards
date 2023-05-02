@@ -3,6 +3,8 @@ import { useParams, Link, useHistory } from "react-router-dom";
 
 import { readDeck, updateDeck } from "../utils/api/index"
 
+import { BsHouseFill } from "react-icons/bs";
+
 function DeckEdit() {
     const initialFormData = {
         name: "",
@@ -39,7 +41,7 @@ function DeckEdit() {
         <div>
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
-                <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                <li className="breadcrumb-item"><Link to="/"><BsHouseFill /> Home</Link></li>
                 <li className="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deck.name}</Link></li>
                 <li className="breadcrumb-item active" aria-current="page">Edit Deck</li>
                 </ol>
