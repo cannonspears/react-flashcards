@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
+import Breadcrumb from "./Breadcrumb";
 
 import { readDeck, createCard } from "../utils/api"
 
@@ -33,13 +34,7 @@ function CreateCard(){
 
     return (
         <div>
-            <nav aria-label="breadcrumb">
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><Link to="/"><BsHouseFill /> Home</Link></li>
-                    <li className="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deck.name}</Link></li>
-                    <li className="breadcrumb-item active" aria-current="page">Add Card</li>
-                </ol>
-            </nav>
+            <Breadcrumb deck={deck} currentPage="Add Card" />
             <h2>{deck.name}: Add Card</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">

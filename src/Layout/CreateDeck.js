@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import DeckForm from './DeckForm';
+import Breadcrumb from './Breadcrumb';
 
 import { createDeck } from '../utils/api'
 
@@ -29,12 +30,7 @@ function CreateDeck() {
 
   return (
     <div>
-      <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item"><Link to="/"><BsHouseFill /> Home</Link></li>
-          <li className="breadcrumb-item active" aria-current="page">Create Deck</li>
-        </ol>
-      </nav>
+      <Breadcrumb currentPage="Create Deck"/>
       <h1>Create Deck</h1>
       <DeckForm handleChange={handleChange} handleSubmit={handleSubmit} formData={formData} path={"/"}/>
     </div>

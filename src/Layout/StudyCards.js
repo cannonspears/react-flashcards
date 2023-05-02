@@ -26,7 +26,6 @@ function StudyCards({deck}) {
   return (
     <div>
       {currentCard ? (
-        
         <div className="card">
           <div className="card-body">
             <h5>Card {currentIndex + 1} of {deck.cards.length}</h5>
@@ -35,7 +34,6 @@ function StudyCards({deck}) {
             {isCardShown ? null : <button type="button" className="btn btn-primary" onClick={handleNext}>Next</button>}
           </div>
         </div>
-        
       ) : (
         <p>There are no cards in this deck.</p>
       )}

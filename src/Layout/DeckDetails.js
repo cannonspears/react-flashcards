@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link, useHistory } from 'react-router-dom'
 import CardDetails from "./CardDetails"
+import Breadcrumb from './Breadcrumb';
 
 import { readDeck, deleteDeck } from '../utils/api';
 
@@ -25,12 +26,7 @@ function DeckDetails() {
 
     return (
         <div>
-            <nav aria-label="breadcrumb">
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><Link to="/"><BsHouseFill /> Home</Link></li>
-                    <li className="breadcrumb-item active" aria-current="page">{deck.name}</li>
-                </ol>
-            </nav>
+            <Breadcrumb currentPage={deck.name}/>
             <div className="pb-2">
                 <div className="mb-2">
                     <h2>{deck.name}</h2>

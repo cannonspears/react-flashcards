@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 import DeckForm from "./DeckForm";
+import Breadcrumb from "./Breadcrumb";
 
 import { readDeck, updateDeck } from "../utils/api/index"
 
@@ -36,18 +37,9 @@ function DeckEdit() {
         });
     }, [deckId]);
 
-
-    // handleChange, handleSubmit, formData, path
-
     return (
         <div>
-            <nav aria-label="breadcrumb">
-                <ol className="breadcrumb">
-                <li className="breadcrumb-item"><Link to="/"><BsHouseFill /> Home</Link></li>
-                <li className="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deck.name}</Link></li>
-                <li className="breadcrumb-item active" aria-current="page">Edit Deck</li>
-                </ol>
-            </nav>
+            <Breadcrumb deck={deck} currentPage="Edit Deck"/>
             <h1>Edit Deck</h1>
             <DeckForm handleChange={handleChange} handleSubmit={handleSubmit} formData={formData} path={`/decks/${deckId}`}/>
         </div>
