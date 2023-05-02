@@ -1,19 +1,26 @@
 import React, {useState, useEffect, Fragment} from 'react'
-import {useParams, Link} from 'react-router-dom'
+import {useParams, Link, useHistory} from 'react-router-dom'
 import CardDetails from "./CardDetails"
 
-import { readDeck } from '../utils/api';
+import { readDeck, deleteDeck } from '../utils/api';
 
 function DeckDetails() {
     const {deckId} = useParams()
+    const history = useHistory
 
     const [deck, setDeck] = useState({})
-
-    console.log(deck);
 
     useEffect(() => {
         readDeck(deckId).then((data) => setDeck(data));
     }, [deckId]);
+
+    const handleDelete = () => {
+        const confirm = window.confirm("Delete this deck?")
+        if (confirm) {
+            deleteDeck(deckId)
+            .then(() => history.push("/"))
+        }
+    }
 
     return (
         <Fragment>
@@ -30,7 +37,7 @@ function DeckDetails() {
                     <Link to="#" type="button" class="btn btn-secondary mr-1">EDIT</Link>
                     <Link to={`/decks/${deckId}/study`} type="button" class="btn btn-primary m-1">STUDY</Link>
                     <Link to="#" type="button" class="btn btn-primary m-1">ADD CARDS</Link>
-                    <Link type="button" class="btn btn-danger m-1">DELETE</Link>
+                    <button onClick={handleDelete} type="button" class="btn btn-danger m-1">DELETE</button>
                 </div>
                 <h2>Cards</h2>
                 {deck?.cards?.map(card => {
