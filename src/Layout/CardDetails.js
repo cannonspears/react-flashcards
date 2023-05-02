@@ -1,8 +1,9 @@
 import React from "react"
-import { Link, useHistory } from "react-router-dom"
+import { Link, useHistory, useParams } from "react-router-dom"
 import { deleteCard } from "../utils/api"
 
 function CardDetails({card}) {
+    const {deckId} = useParams()
     const history = useHistory()
 
     const handleDelete = () => {
@@ -18,7 +19,7 @@ function CardDetails({card}) {
             <div className="card-body">
                 <h5 class="card-title">{card.front}</h5>
                 <p classname="card-text">{card.back}</p>
-                <Link to="#" type="button" class="btn btn-secondary m-1">EDIT</Link>
+                <Link to={`/decks/${deckId}/cards/${card.id}/edit`} type="button" class="btn btn-secondary m-1">EDIT</Link>
                 <button onClick={handleDelete} type="button" class="btn btn-danger m-1">DELETE</button>
             </div>
         </div>
