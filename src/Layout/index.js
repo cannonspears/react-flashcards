@@ -4,16 +4,15 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import DeckList from "./DeckList";
 import CreateDeck from "./CreateDeck"
-import StudyPage from "./StudyPage";
-import DeckDetails from "./DeckDetails"
-import DeckEdit from "./DeckEdit"
 import CreateCard from "./CreateCard"
 import CardEdit from "./CardEdit"
+import StudyPage from "./StudyPage";
+import DeckEdit from "./DeckEdit"
+import DeckDetails from "./DeckDetails"
 import NotFound from "./NotFound";
 
 function Layout() {
   
-
   return (
     <Fragment>
       <Header />

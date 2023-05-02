@@ -12,14 +12,12 @@ function DeckList() {
   }, []);
   
   return (
-    <React.Fragment>
+    <div>
       <Link to="/decks/new" type="button" className="btn btn-secondary mb-3">CREATE DECK</Link>
-      
         {decks.map((deck) => {
           return <DeckSummary deck={deck} />;
         })}
-      
-    </React.Fragment>
+    </div>
   )
 }
 

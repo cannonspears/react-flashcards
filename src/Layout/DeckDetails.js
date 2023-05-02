@@ -1,18 +1,13 @@
-import React, {useState, useEffect, Fragment} from 'react'
-import {useParams, Link, useHistory} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useParams, Link, useHistory } from 'react-router-dom'
 import CardDetails from "./CardDetails"
 
 import { readDeck, deleteDeck } from '../utils/api';
 
 function DeckDetails() {
-    const {deckId} = useParams()
+    const { deckId } = useParams()
     const history = useHistory()
-
     const [deck, setDeck] = useState({})
-
-    useEffect(() => {
-        readDeck(deckId).then((data) => setDeck(data));
-    }, [deckId]);
 
     const handleDelete = () => {
         const confirm = window.confirm("Delete this deck?")
@@ -22,8 +17,12 @@ function DeckDetails() {
         }
     }
 
+    useEffect(() => {
+        readDeck(deckId).then((data) => setDeck(data));
+    }, [deckId]);
+
     return (
-        <Fragment>
+        <div>
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item"><Link to="/">Home</Link></li>
@@ -44,8 +43,7 @@ function DeckDetails() {
                     return <CardDetails card={card} />
                 })}
             </div>
-
-        </Fragment>
+        </div>
     )
 }
 

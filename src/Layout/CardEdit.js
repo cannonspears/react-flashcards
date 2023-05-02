@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 import { readDeck, readCard, updateCard } from "../utils/api";
 
@@ -8,21 +8,10 @@ function CardEdit() {
         back: ""
     }
     const history = useHistory()
-    const {deckId, cardId} = useParams()
+    const { deckId, cardId } = useParams()
     const [deck, setDeck] = useState({})
     const [card, setCard] = useState({})
     const [formData, setFormData] = useState({...initialFormData})
-
-    useEffect(() => {
-        readDeck(deckId).then((data) => setDeck(data));
-    }, [deckId]);
-
-    useEffect(() => {
-        readCard(cardId).then((data) => {
-            setCard(data)
-            setFormData(data)
-        });
-    }, [cardId]);
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -37,8 +26,19 @@ function CardEdit() {
     })
   }
 
+    useEffect(() => {
+        readDeck(deckId).then((data) => setDeck(data));
+    }, [deckId]);
+
+    useEffect(() => {
+        readCard(cardId).then((data) => {
+            setCard(data)
+            setFormData(data)
+        });
+    }, [cardId]);
+
     return (
-        <Fragment>
+        <div>
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                 <li className="breadcrumb-item"><Link to="/">Home</Link></li>
@@ -72,12 +72,10 @@ function CardEdit() {
                     value={formData.back}
                     />
                 </div>
-
                 <Link to={`/decks/${deckId}`} type="button" className="btn btn-secondary mr-2" role="button">Cancel</Link>
                 <button type="submit" className="btn btn-primary">Submit</button>
-
             </form>
-        </Fragment>
+        </div>
     )
 }
 

@@ -1,4 +1,4 @@
-import React, {useState, Fragment} from 'react'
+import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { createDeck } from '../utils/api'
 
@@ -7,10 +7,8 @@ function CreateDeck() {
     name: "",
     description: ""
   }
-
-  const [formData, setFormData] = useState({...initialFormData})
   const history = useHistory()
-
+  const [formData, setFormData] = useState({...initialFormData})
 
   const handleChange = (event) => {
     setFormData({
@@ -26,7 +24,7 @@ function CreateDeck() {
   }
 
   return (
-    <Fragment>
+    <div>
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item"><Link to="/">Home</Link></li>
@@ -59,12 +57,10 @@ function CreateDeck() {
             value={formData.description}
             />
         </div>
-
         <Link to="/" type="button" className="btn btn-secondary mr-2" role="button">Cancel</Link>
         <button type="submit" className="btn btn-primary">Submit</button>
-        
       </form>
-    </Fragment>
+    </div>
   )
 }
 

@@ -3,7 +3,7 @@ import { Link, useHistory, useParams } from "react-router-dom"
 import { deleteCard } from "../utils/api"
 
 function CardDetails({card}) {
-    const {deckId} = useParams()
+    const { deckId } = useParams()
     const history = useHistory()
 
     const handleDelete = () => {

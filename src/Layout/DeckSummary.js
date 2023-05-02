@@ -4,7 +4,6 @@ import {Link, useHistory} from "react-router-dom";
 import { deleteDeck } from "../utils/api";
 
 function DeckSummary({ deck: {name, cards, description, id} }) {
-
     const history = useHistory()
 
     const handleDelete = () => {

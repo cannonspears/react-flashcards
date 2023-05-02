@@ -13,10 +13,8 @@ function StudyCards({deck}) {
       setCurrentIndex(currentIndex + 1);
       setIsCardShown(true);
     } else {
-      const restart = window.confirm(
-        "Restart cards?\n\nClick 'Cancel' to return to the home page."
-      );
-      if (restart) {
+      const confirm = window.confirm("Restart cards?\n\nClick 'Cancel' to return to the home page.");
+      if (confirm) {
         setCurrentIndex(0);
         setIsCardShown(true);
       } else {
@@ -38,8 +36,6 @@ function StudyCards({deck}) {
           </div>
         </div>
         
-        
-      
       ) : (
         <p>There are no cards in this deck.</p>
       )}

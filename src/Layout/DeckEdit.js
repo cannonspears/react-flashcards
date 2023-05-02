@@ -1,26 +1,17 @@
-import React, {Fragment, useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 
 import { readDeck, updateDeck } from "../utils/api/index"
 
 function DeckEdit() {
-    const history = useHistory()
-    const {deckId} = useParams()
-    const [deck, setDeck] = useState({})
-
     const initialFormData = {
         name: "",
         description: ""
     }
-
+    const history = useHistory()
+    const { deckId } = useParams()
+    const [deck, setDeck] = useState({})
     const [formData, setFormData] = useState({...initialFormData})
-
-    useEffect(() => {
-        readDeck(deckId).then((data) => {
-            setDeck(data)
-            setFormData(data)
-        });
-    }, [deckId]);
 
     const handleChange = (event) => {
     setFormData({
@@ -35,9 +26,17 @@ function DeckEdit() {
     .then(({id}) => history.push(`/decks/${id}`))
   }
 
+    useEffect(() => {
+        readDeck(deckId).then((data) => {
+            setDeck(data)
+            setFormData(data)
+        });
+    }, [deckId]);
+
+
 
     return (
-        <Fragment>
+        <div>
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                 <li className="breadcrumb-item"><Link to="/">Home</Link></li>
@@ -71,12 +70,10 @@ function DeckEdit() {
                     value={formData.description}
                     />
                 </div>
-
                 <Link to={`/decks/${deckId}`} type="button" className="btn btn-secondary mr-2" role="button">Cancel</Link>
                 <button type="submit" className="btn btn-primary">Submit</button>
-                
             </form>
-        </Fragment>
+        </div>
     )
 }
 
