@@ -1,15 +1,35 @@
 import React, {Fragment, useState, useEffect} from "react"
 import { useParams, Link } from "react-router-dom"
 
-import { readDeck } from "../utils/api"
+import { readDeck, createCard } from "../utils/api"
 
 function CreateCard(){
-    const {deckId} = useParams()
     const [deck, setDeck] = useState({})
+    const {deckId} = useParams()
+    
+    const initialFormData = {
+        front: "",
+        back: ""
+    }
+    
+    const [formData, setFormData] = useState({...initialFormData})
 
     useEffect(() => {
         readDeck(deckId).then((data) => setDeck(data));
     }, [deckId]);
+
+    const handleChange = (event) => {
+        setFormData({
+        ...formData,
+        [event.target.name]: event.target.value
+        })
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        createCard(deckId, formData)
+        setFormData(initialFormData)
+    }
 
     return (
         <Fragment>
@@ -21,7 +41,7 @@ function CreateCard(){
                     </ol>
                 </nav>
                 <h2>{deck.name}: Add Card</h2>
-                <form >
+                <form onSubmit={handleSubmit}>
                     <div class="form-group">
                     <label htmlFor="name">Front</label>
                     <textarea
@@ -30,7 +50,8 @@ function CreateCard(){
                         name="front"
                         rows="3"
                         placeholder="Front side of card"
-                        
+                        onChange={handleChange}
+                        value={formData.front}
                         />
                     </div>
                     <div class="form-group">
@@ -40,12 +61,13 @@ function CreateCard(){
                         id="back"
                         name="back"
                         rows="3"
-                        placeholder="back side of card"
-                
+                        placeholder="Back side of card"
+                        onChange={handleChange}
+                        value={formData.back}
                         />
                     </div>
 
-                    <Link to="/" type="button" className="btn btn-secondary mr-2" role="button">Done</Link>
+                    <Link to={`/decks/${deckId}`} type="button" className="btn btn-secondary mr-2" role="button">Done</Link>
                     <button type="submit" class="btn btn-primary">Save</button>
 
                 </form>
