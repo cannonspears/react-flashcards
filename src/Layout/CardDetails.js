@@ -17,10 +17,10 @@ function CardDetails({card}) {
     return (
         <div className="card mb-2">
             <div className="card-body">
-                <h5 class="card-title">{card.front}</h5>
-                <p classname="card-text">{card.back}</p>
-                <Link to={`/decks/${deckId}/cards/${card.id}/edit`} type="button" class="btn btn-secondary m-1">EDIT</Link>
-                <button onClick={handleDelete} type="button" class="btn btn-danger m-1">DELETE</button>
+                <h5 className="card-title">{card.front}</h5>
+                <p className="card-text">{card.back}</p>
+                <Link to={`/decks/${deckId}/cards/${card.id}/edit`} type="button" className="btn btn-secondary m-1">EDIT</Link>
+                <button onClick={handleDelete} type="button" className="btn btn-danger m-1">DELETE</button>
             </div>
         </div>
     )

@@ -40,18 +40,18 @@ function CardEdit() {
     return (
         <Fragment>
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                <li class="breadcrumb-item"><Link to="/">Home</Link></li>
-                <li class="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deck.name}</Link></li>
-                <li class="breadcrumb-item active" aria-current="page">Edit Card {cardId}</li>
+                <ol className="breadcrumb">
+                <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                <li className="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deck.name}</Link></li>
+                <li className="breadcrumb-item active" aria-current="page">Edit Card {cardId}</li>
                 </ol>
             </nav>
             <h2>Edit Card</h2>
             <form onSubmit={handleSubmit}>
-                <div class="form-group">
+                <div className="form-group">
                 <label htmlFor="name">Front</label>
                 <textarea
-                    class="form-control"
+                    className="form-control"
                     id="front"
                     name="front"
                     rows="3"
@@ -60,10 +60,10 @@ function CardEdit() {
                     value={formData.front}
                     />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                 <label htmlFor="description">Back</label>
                 <textarea
-                    class="form-control"
+                    className="form-control"
                     id="back"
                     name="back"
                     rows="3"
@@ -74,7 +74,7 @@ function CardEdit() {
                 </div>
 
                 <Link to={`/decks/${deckId}`} type="button" className="btn btn-secondary mr-2" role="button">Cancel</Link>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Submit</button>
 
             </form>
         </Fragment>

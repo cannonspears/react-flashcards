@@ -34,7 +34,7 @@ function CreateCard(){
     return (
         <Fragment>
             <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
+                    <ol className="breadcrumb">
                         <li className="breadcrumb-item"><Link to="/">Home</Link></li>
                         <li className="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deck.name}</Link></li>
                         <li className="breadcrumb-item active" aria-current="page">Add Card</li>
@@ -42,10 +42,10 @@ function CreateCard(){
                 </nav>
                 <h2>{deck.name}: Add Card</h2>
                 <form onSubmit={handleSubmit}>
-                    <div class="form-group">
+                    <div className="form-group">
                     <label htmlFor="name">Front</label>
                     <textarea
-                        class="form-control"
+                        className="form-control"
                         id="front"
                         name="front"
                         rows="3"
@@ -54,10 +54,10 @@ function CreateCard(){
                         value={formData.front}
                         />
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                     <label htmlFor="description">Back</label>
                     <textarea
-                        class="form-control"
+                        className="form-control"
                         id="back"
                         name="back"
                         rows="3"
@@ -68,7 +68,7 @@ function CreateCard(){
                     </div>
 
                     <Link to={`/decks/${deckId}`} type="button" className="btn btn-secondary mr-2" role="button">Done</Link>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" className="btn btn-primary">Save</button>
 
                 </form>
         </Fragment>

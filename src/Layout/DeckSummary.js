@@ -21,9 +21,9 @@ function DeckSummary({ deck: {name, cards, description, id} }) {
               <h5 className="card-title">{name}</h5>
               <h6>{cards.length} cards</h6>
               <p className="card-text">{description}</p>
-              <Link to={`/decks/${id}`} type="button" class="btn btn-secondary m-1">VIEW</Link>
-              <Link to={`/decks/${id}/study`} type="button" class="btn btn-primary m-1">STUDY</Link>
-              <button onClick={handleDelete} type="button" class="btn btn-danger m-1">DELETE</button>
+              <Link to={`/decks/${id}`} type="button" className="btn btn-secondary m-1">VIEW</Link>
+              <Link to={`/decks/${id}/study`} type="button" className="btn btn-primary m-1">STUDY</Link>
+              <button onClick={handleDelete} type="button" className="btn btn-danger m-1">DELETE</button>
           </div>
       </div>
   );

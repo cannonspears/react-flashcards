@@ -28,18 +28,18 @@ function CreateDeck() {
   return (
     <Fragment>
       <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><Link to="/">Home</Link></li>
-          <li class="breadcrumb-item active" aria-current="page">Create Deck</li>
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">Create Deck</li>
         </ol>
       </nav>
       <h1>Create Deck</h1>
       <form onSubmit={handleSubmit}>
-        <div class="form-group">
+        <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="name"
             name="name"
             placeholder="Deck Name"
@@ -47,10 +47,10 @@ function CreateDeck() {
             value={formData.name}
             />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label htmlFor="description">Description</label>
           <textarea
-            class="form-control"
+            className="form-control"
             id="description"
             name="description"
             rows="3"
@@ -61,7 +61,7 @@ function CreateDeck() {
         </div>
 
         <Link to="/" type="button" className="btn btn-secondary mr-2" role="button">Cancel</Link>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
         
       </form>
     </Fragment>
