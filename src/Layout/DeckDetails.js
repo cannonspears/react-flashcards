@@ -6,7 +6,7 @@ import { readDeck, deleteDeck } from '../utils/api';
 
 function DeckDetails() {
     const {deckId} = useParams()
-    const history = useHistory
+    const history = useHistory()
 
     const [deck, setDeck] = useState({})
 

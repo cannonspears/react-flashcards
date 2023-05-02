@@ -11,7 +11,7 @@ function DeckSummary({ deck: {name, cards, description, id} }) {
         const confirm = window.confirm("Delete this deck?")
         if (confirm) {
             deleteDeck(id)
-            .then(() => history.push("/"))
+            .then(() => history.go(0))
         }
     }
 
