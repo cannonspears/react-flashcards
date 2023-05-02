@@ -15,7 +15,7 @@ function DeckList() {
     <div>
       <Link to="/decks/new" type="button" className="btn btn-secondary mb-3">CREATE DECK</Link>
         {decks.map((deck) => {
-          return <DeckSummary deck={deck} />;
+          return <DeckSummary key={deck.id} deck={deck} />;
         })}
     </div>
   )

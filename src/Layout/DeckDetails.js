@@ -40,7 +40,7 @@ function DeckDetails() {
                 </div>
                 <h2>Cards</h2>
                 {deck?.cards?.map(card => {
-                    return <CardDetails card={card} />
+                    return <CardDetails key={card.id} card={card} />
                 })}
             </div>
         </div>
