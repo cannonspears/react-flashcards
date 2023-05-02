@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
+import DeckForm from "./DeckForm";
 
 import { readDeck, updateDeck } from "../utils/api/index"
 
@@ -36,6 +37,7 @@ function DeckEdit() {
     }, [deckId]);
 
 
+    // handleChange, handleSubmit, formData, path
 
     return (
         <div>
@@ -47,34 +49,7 @@ function DeckEdit() {
                 </ol>
             </nav>
             <h1>Edit Deck</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    name="name"
-                    placeholder="Deck Name"
-                    onChange={handleChange}
-                    value={formData.name}
-                    />
-                </div>
-                <div className="form-group">
-                <label htmlFor="description">Description</label>
-                <textarea
-                    className="form-control"
-                    id="description"
-                    name="description"
-                    rows="3"
-                    placeholder="Brief description of the deck"
-                    onChange={handleChange}
-                    value={formData.description}
-                    />
-                </div>
-                <Link to={`/decks/${deckId}`} type="button" className="btn btn-secondary mr-2" role="button">Cancel</Link>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+            <DeckForm handleChange={handleChange} handleSubmit={handleSubmit} formData={formData} path={`/decks/${deckId}`}/>
         </div>
     )
 }
