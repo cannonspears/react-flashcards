@@ -3,6 +3,8 @@ import {Link, useHistory} from "react-router-dom";
 
 import { deleteDeck } from "../utils/api";
 
+import { BsTrash } from "react-icons/bs";
+
 function DeckSummary({ deck: {name, cards, description, id} }) {
     const history = useHistory()
 
@@ -22,7 +24,7 @@ function DeckSummary({ deck: {name, cards, description, id} }) {
               <p className="card-text">{description}</p>
               <Link to={`/decks/${id}`} type="button" className="btn btn-secondary m-1">VIEW</Link>
               <Link to={`/decks/${id}/study`} type="button" className="btn btn-primary m-1">STUDY</Link>
-              <button onClick={handleDelete} type="button" className="btn btn-danger m-1">DELETE</button>
+              <button onClick={handleDelete} type="button" className="btn btn-danger m-1"><BsTrash /></button>
           </div>
       </div>
   );

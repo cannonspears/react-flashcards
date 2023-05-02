@@ -2,6 +2,8 @@ import React from "react"
 import { Link, useHistory, useParams } from "react-router-dom"
 import { deleteCard } from "../utils/api"
 
+import { BsTrash } from "react-icons/bs";
+
 function CardDetails({card}) {
     const { deckId } = useParams()
     const history = useHistory()
@@ -20,7 +22,7 @@ function CardDetails({card}) {
                 <h5 className="card-title">{card.front}</h5>
                 <p className="card-text">{card.back}</p>
                 <Link to={`/decks/${deckId}/cards/${card.id}/edit`} type="button" className="btn btn-secondary m-1">EDIT</Link>
-                <button onClick={handleDelete} type="button" className="btn btn-danger m-1">DELETE</button>
+                <button onClick={handleDelete} type="button" className="btn btn-danger m-1"><BsTrash /></button>
             </div>
         </div>
     )

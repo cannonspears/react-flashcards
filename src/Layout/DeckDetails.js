@@ -4,6 +4,8 @@ import CardDetails from "./CardDetails"
 
 import { readDeck, deleteDeck } from '../utils/api';
 
+import { BsTrash } from "react-icons/bs";
+
 function DeckDetails() {
     const { deckId } = useParams()
     const history = useHistory()
@@ -36,7 +38,7 @@ function DeckDetails() {
                     <Link to={`/decks/${deckId}/edit`} type="button" className="btn btn-secondary mr-1">EDIT</Link>
                     <Link to={`/decks/${deckId}/study`} type="button" className="btn btn-primary m-1">STUDY</Link>
                     <Link to={`/decks/${deckId}/cards/new`} type="button" className="btn btn-primary m-1">ADD CARDS</Link>
-                    <button onClick={handleDelete} type="button" className="btn btn-danger m-1">DELETE</button>
+                    <button onClick={handleDelete} type="button" className="btn btn-danger m-1"><BsTrash /></button>
                 </div>
                 <h2>Cards</h2>
                 {deck?.cards?.map(card => {
