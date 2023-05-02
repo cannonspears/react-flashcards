@@ -7,6 +7,7 @@ import CreateDeck from "./CreateDeck"
 import StudyPage from "./StudyPage";
 import DeckDetails from "./DeckDetails"
 import DeckEdit from "./DeckEdit"
+import CreateCard from "./CreateCard"
 import NotFound from "./NotFound";
 
 function Layout() {
@@ -22,6 +23,9 @@ function Layout() {
           </Route>
           <Route path="/decks/new">
             <CreateDeck />
+          </Route>
+          <Route path="/decks/:deckId/cards/new">
+            <CreateCard />
           </Route>
           <Route path="/decks/:deckId/study">
             <StudyPage />

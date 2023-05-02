@@ -36,7 +36,7 @@ function DeckDetails() {
                     <p>{deck.description}</p>
                     <Link to={`/decks/${deckId}/edit`} type="button" class="btn btn-secondary mr-1">EDIT</Link>
                     <Link to={`/decks/${deckId}/study`} type="button" class="btn btn-primary m-1">STUDY</Link>
-                    <Link to="#" type="button" class="btn btn-primary m-1">ADD CARDS</Link>
+                    <Link to={`/decks/${deckId}/cards/new`} type="button" class="btn btn-primary m-1">ADD CARDS</Link>
                     <button onClick={handleDelete} type="button" class="btn btn-danger m-1">DELETE</button>
                 </div>
                 <h2>Cards</h2>
