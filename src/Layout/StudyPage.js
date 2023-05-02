@@ -5,7 +5,7 @@ import Breadcrumb from './Breadcrumb';
 
 import { readDeck } from '../utils/api';
 
-import { BsHouseFill, BsPlusSquare } from "react-icons/bs";
+import { BsPlusSquare } from "react-icons/bs";
 
 function StudyPage() {
   const { deckId } = useParams();

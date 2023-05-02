@@ -4,8 +4,6 @@ import Breadcrumb from "./Breadcrumb";
 
 import { readDeck, readCard, updateCard } from "../utils/api";
 
-import { BsHouseFill } from "react-icons/bs";
-
 function CardEdit() {
     const initialFormData = {
         front: "",

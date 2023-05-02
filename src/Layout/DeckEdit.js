@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import DeckForm from "./DeckForm";
 import Breadcrumb from "./Breadcrumb";
 
 import { readDeck, updateDeck } from "../utils/api/index"
-
-import { BsHouseFill } from "react-icons/bs";
 
 function DeckEdit() {
     const initialFormData = {

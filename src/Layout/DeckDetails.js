@@ -5,7 +5,7 @@ import Breadcrumb from './Breadcrumb';
 
 import { readDeck, deleteDeck } from '../utils/api';
 
-import { BsHouseFill, BsPencilFill, BsFillBookmarksFill, BsPlusSquare, BsTrash } from "react-icons/bs";
+import { BsPencilFill, BsFillBookmarksFill, BsPlusSquare, BsTrash } from "react-icons/bs";
 
 function DeckDetails() {
     const { deckId } = useParams()

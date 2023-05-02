@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import DeckForm from './DeckForm';
 import Breadcrumb from './Breadcrumb';
 
 import { createDeck } from '../utils/api'
-
-import { BsHouseFill } from "react-icons/bs";
 
 function CreateDeck() {
   const initialFormData = {
