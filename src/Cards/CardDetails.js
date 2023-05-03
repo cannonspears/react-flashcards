@@ -9,7 +9,7 @@ function CardDetails({card}) {
     const history = useHistory()
 
     const handleDelete = () => {
-        const confirm = window.confirm("Delete this deck?")
+        const confirm = window.confirm("Delete this card?")
         if (confirm) {
             deleteCard(card.id)
             .then(() => history.go(0))
