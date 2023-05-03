@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import Breadcrumb from "./Breadcrumb";
+import CardForm from "./CardForm";
 
 import { readDeck, createCard } from "../utils/api"
 
@@ -34,34 +35,7 @@ function CreateCard(){
         <div>
             <Breadcrumb deck={deck} currentPage="Add Card" />
             <h2>{deck.name}: Add Card</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                <label htmlFor="name">Front</label>
-                <textarea
-                    className="form-control"
-                    id="front"
-                    name="front"
-                    rows="3"
-                    placeholder="Front side of card"
-                    onChange={handleChange}
-                    value={formData.front}
-                    />
-                </div>
-                <div className="form-group">
-                <label htmlFor="description">Back</label>
-                <textarea
-                    className="form-control"
-                    id="back"
-                    name="back"
-                    rows="3"
-                    placeholder="Back side of card"
-                    onChange={handleChange}
-                    value={formData.back}
-                    />
-                </div>
-                <Link to={`/decks/${deckId}`} type="button" className="btn btn-secondary mr-2" role="button">Done</Link>
-                <button type="submit" className="btn btn-primary">Save</button>
-            </form>
+            <CardForm handleChange={handleChange} handleSubmit={handleSubmit} formData={formData} deckId={deckId} doneText="Done" saveText="Save" />
         </div>
     )
 }
