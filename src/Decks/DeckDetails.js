@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link, useHistory } from 'react-router-dom'
-import CardDetails from "./CardDetails"
-import Breadcrumb from './Breadcrumb';
+import CardDetails from "../Cards/CardDetails"
+import Breadcrumb from '../Layout/Breadcrumb';
 
 import { readDeck, deleteDeck } from '../utils/api';
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import DeckForm from './DeckForm';
-import Breadcrumb from './Breadcrumb';
+import Breadcrumb from '../Layout/Breadcrumb';
 
 import { createDeck } from '../utils/api'
 

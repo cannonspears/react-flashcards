@@ -2,13 +2,13 @@ import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Header from "./Header";
-import DeckList from "./DeckList";
-import CreateDeck from "./CreateDeck"
-import CreateCard from "./CreateCard"
-import CardEdit from "./CardEdit"
-import StudyPage from "./StudyPage";
-import DeckEdit from "./DeckEdit"
-import DeckDetails from "./DeckDetails"
+import DeckList from "../Decks/DeckList";
+import CreateDeck from "../Decks/CreateDeck"
+import CreateCard from "../Cards/CreateCard"
+import CardEdit from "../Cards/CardEdit"
+import StudyPage from "../Decks/StudyPage";
+import DeckEdit from "../Decks/DeckEdit"
+import DeckDetails from "../Decks/DeckDetails"
 import NotFound from "./NotFound";
 
 function Layout() {
